@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PlacesDojo Browse Places -  Template</title>
+    <title>Кабинет Рекламодателя</title>
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700' rel='stylesheet' type='text/css'>
@@ -45,87 +45,75 @@
     <div id="page-content">
         
         <!-- navbar -->
-      <nav class="navbar navbar-default navbar-fixed">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-menu" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand text-uppercase montserrat logo" href="index.html"
-               data-bg="http://placehold.it/250x200">
-            </a>
-          </div>
-          <div class="navbar-collapse" id="top-menu">
-            <form class=" navbar-form navbar-left" role="search">
-              <div class="form-group">
-                <input type="search" class="form-control" placeholder="Search for a nice place">
-              </div>
-              <button type="submit" class="btn btn-default">
-              <i class="fa fa-search"></i>
-              </button>
-            </form>
-            <div class=" pull-left menu-top-categories">
-              <h6 class="montserrat text-uppercase"><b>Top 5 categories</b></h6>
-              <ul class="list-inline text-center">
-                <li class="hovered menu-category menu-category1">
-                  <a href="#" class="flaticon-musical-note">
-                  </a>
-                </li>
-                <li class="hovered menu-category menu-category2">
-                  <a href="#" class="flaticon-beer">
-                  </a>
-                </li>
-                <li class="hovered menu-category menu-category3">
-                  <a href="#" class="flaticon-chocolate">
-                  </a>
-                </li>
-                <li class="hovered menu-category menu-category4">
-                  <a href="#" class="flaticon-hamburger">
-                  </a>
-                </li>
-                <li class="hovered menu-category menu-category5">
-                  <a href="#" class="flaticon-karaoke">
-                  </a>
-                </li>
-              </ul>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-menu" aria-expanded="false">
+                        <span class="sr-only">навигация</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand text-uppercase montserrat logo" href="index.html" data-bg="http://placehold.it/240x200">
+                    </a>
+                </div>
+                <div class="navbar-collapse" id="top-menu">
+                    <form class="hidden navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input type="search" class="form-control" placeholder="Поиск">
+                        </div>
+                        <button type="submit" class="btn btn-default">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+                    <div class="hidden pull-left menu-top-categories">
+                        <h6 class="montserrat text-uppercase"><b>ТОП 5 категорий</b></h6>
+                        <ul class="list-inline text-center">
+                            <li class="hovered menu-category menu-category1">
+                                <a href="#" class="flaticon-musical-note">
+                                </a>
+                            </li>
+                            <li class="hovered menu-category menu-category2">
+                                <a href="#" class="flaticon-speakers">
+                                </a>
+                            </li>
+                            <li class="hovered menu-category menu-category3">
+                                <a href="#" class="flaticon-cell-phone">
+                                </a>
+                            </li>
+                            <li class="hovered menu-category menu-category4">
+                                <a href="#" class="flaticon-calendar">
+                                </a>
+                            </li>
+                            <li class="hovered menu-category menu-category5">
+                                <a href="#" class="flaticon-karaoke">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="nav navbar-nav pull-right text-uppercase montserrat">
+                        <li class="active"><a href="index.html"><b>Главная</b> <span class="sr-only">(current)</span></a></li>
+
+                        <li><a href="how-it-works.html">Как работает?</a></li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                               aria-expanded="false">Личный кабинет <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="browse-places-with-map.html">Рекламодатель</a></li>
+                                <li><a href="browse-places-without-map.html">Рекламный агент</a></li>
+                            </ul>
+                        </li>
+
+
+
+                        <li class="addPlace">
+                            <a href="#" class="hovered"><b>Создать аккаунт</b></a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <ul class="nav navbar-nav pull-right text-uppercase montserrat">
-              <li class="active"><a href="index.html"><b>Home</b> <span class="sr-only">(current)</span></a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Places <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="browse-places-with-map.html">Browse Places Style 1</a></li>
-                  <li><a href="browse-places-without-map.html">Browse Places Style 2</a></li>
-                </ul>
-              </li>
-              <li><a href="events.html"><b>Events</b></a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="blog-page.html">Blog Page</a></li>
-                  <li><a href="blog-post.html">Blog Post</a></li>
-                </ul>
-              </li>
-              <li><a href="contact-us.html"><b>Contact</b></a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="item-details.html">Item Details</a></li>
-                  <li><a href="how-it-works.html">How It Works</a></li>
-                  <li><a href="special-offerts.html">Special Offerts</a></li>
-                  <li><a href="page-404.html">Page 404</a></li>
-                </ul>
-              </li>
-              <li class="addPlace">
-                <a href="#" class="hovered"><b>Add Place</b></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+        </nav>
         <!-- /.navbar -->
 
         <div class="container-fluid">
