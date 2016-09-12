@@ -1,0 +1,12 @@
+{
+  "name"         : "how_by",
+  "version"      : "0.0.1",
+  "description"  : "",
+  "main"         : "server.js",
+  "author"       : "Nick Z",
+  "dependencies" : {
+    "body-parser"    : "latest",
+    "express"        : "latest",
+    "morgan"         : "latest"
+  }
+}
