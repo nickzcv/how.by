@@ -559,7 +559,10 @@ body{font-family: 'Old Standard TT', serif;}
 .posibilities span:before{
 	font-size: 30px; /* icon size */
 }
-.posibilities h2{padding: 18px 5px 11px 15px;}
+.posibilities h2{
+	padding: 18px 5px 11px 15px;
+	font-size: 20px;
+}
 .posibilities h2:first-of-type{
 	border-right: 2px solid #333;
 	width: 70px;
@@ -762,7 +765,7 @@ body{font-family: 'Old Standard TT', serif;}
 	margin-left: -5px !important;
 	margin-right: 30px;
 	margin-top: 10px;
-	background-image: url("../images/small-logo.png") !important;
+	background-image: url("http://placehold.it/220x80") !important;
 	background-repeat: no-repeat;
 	background-size: 100% !important;
 }
