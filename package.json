@@ -1,12 +1,14 @@
 {
-  "name"         : "how_by",
+  "name"         : "how-by",
   "version"      : "0.0.1",
   "description"  : "",
-  "main"         : "server.js",
+  "main"         : "server/server.js",
   "author"       : "Nick Z",
   "dependencies" : {
     "body-parser"    : "latest",
     "express"        : "latest",
-    "morgan"         : "latest"
+    "winston"         : "latest",
+    "method-override": "^2.1.2",
+    "serve-favicon": "^2.0.1"
   }
 }
