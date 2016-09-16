@@ -1,47 +1,41 @@
-﻿// set up ======================================================================
-var express = require('express');
-var path = require('path');
+﻿// BASE SETUP
+// =============================================================================
 
-//var favicon = require('serve-favicon');
-var winston = require('winston');
-var methodOverride = require('method-override');
+// call the packages we need
+var express    = require('express');        // call express
+var app        = express();                 // define our app using express
 var bodyParser = require('body-parser');
 
+// configure app to use bodyParser()
+// this will let us get the data from a POST
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-var app = express();
+var port = process.env.PORT || 8080;        // set our port
 
+var mongoose = require('mongoose');
+mongoose.connect('localhost:27017/api'); // connect to our database
 
-
-// configuration ===============================================================
-//app.use(favicon(__dirname + '/src/favicon.ico'));
-app.use(methodOverride());
-app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
-app.use(bodyParser.json());                                     // parse application/json
-app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
-
-app.use(express.static('./src'));                 // set the static files location /public/img will be /img for users
-
+//Define mongoose Schema
+var Customer = require('../app/models/customer');
 
 
-// routes ======================================================================
-require('./routers.js')(app);
+// ROUTES FOR OUR API
+// =============================================================================
+var router = express.Router();              // get an instance of the express Router
 
-
-// Set up a logger.
-app.locals.logger = new winston.Logger();
-app.locals.logger.add(winston.transports.Console, {
-	colorize: true
+// test route to make sure everything is working (accessed at GET http://localhost:8080/api)
+router.get('/', function(req, res) {
+	res.json({ message: 'How are you? welcome to our api!' });
 });
 
-// Log every request.
-app.use(function (req, res, next) {
-	req.app.locals.logger.info('[' + req.method + ']', req.url);
-	next();
-});
+// more routes for our API will happen here
 
+// REGISTER OUR ROUTES -------------------------------
+// all of our routes will be prefixed with /api
+app.use('/api', router);
 
-
-
-// listen (start app with node server.js) ======================================
-app.listen(80);
-console.log("App listening on port 80");
+// START THE SERVER
+// =============================================================================
+app.listen(port);
+console.log('How.by run on port: ' + port);
