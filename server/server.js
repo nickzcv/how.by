@@ -5,6 +5,7 @@
 var express    = require('express');        // call express
 var app        = express();                 // define our app using express
 var bodyParser = require('body-parser');
+var winston    = require('winston');
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -19,6 +20,11 @@ mongoose.connect('localhost:27017/api'); // connect to our database
 //Define mongoose Schema
 var Customer = require('../app/models/customer');
 
+// Set up a logger.
+app.locals.logger = new winston.Logger();
+app.locals.logger.add(winston.transports.Console, {
+	colorize: true
+});
 
 // ROUTES FOR OUR API
 // =============================================================================
@@ -29,31 +35,36 @@ router.get('/', function(req, res) {
 	res.json({ message: 'How are you? welcome to our api!' });
 });
 
-// middleware to use for all requests
-router.use(function(req, res, next) {
-	// do logging
-	console.log('Something is happening.');
-	next(); // make sure we go to the next routes and don't stop here
+// Log every request.
+router.use(function (req, res, next) {
+	req.app.locals.logger.info('[' + req.method + ']', req.url);
+	next();
 });
 
 // more routes for our API will happen here
 
-// on routes that end in /bears
+// on routes that end in /customers
 // ----------------------------------------------------
-router.route('/customer')
+router.route('/customers')
 
 // create a Customer (accessed at POST http://localhost:8080/api/customer)
 	.post(function(req, res) {
 
 		var customer = new Customer();
 
-		customer.login = req.body.login;
-		customer.password = req.body.password;
 		customer.name = req.body.name;
-		customer.phone = req.body.phone;
-		customer.registrationDate = new Date();
+		customer.username = req.body.username;
+		customer.password = req.body.password;
+		customer.status = 'NEW';
+		customer.location = req.body.location;
+		customer.meta.age = req.body.age;
+		customer.meta.website = req.body.website;
+		customer.meta.email = req.body.email;
+		customer.meta.phone = req.body.phone;
+		customer.created_at = new Date();
+		customer.updated_at = new Date();
 
-		// save the bear and check for errors
+		// save the customer and check for errors
 		customer.save(function(err) {
 			if (err)
 				res.send(err);
@@ -61,6 +72,66 @@ router.route('/customer')
 			res.json({ message: 'Customer created!' });
 		});
 
+	})
+
+	// get all the customers (accessed at GET http://localhost:8080/api/customer)
+	.get(function(req, res) {
+		Customer.find(function(err, customer) {
+			if (err)
+				res.send(err);
+
+			res.json(customer);
+		});
+	});
+
+// on routes that end in /customers/:customer_id
+// ----------------------------------------------------
+router.route('/customers/:customer_id')
+
+// get the customer with that id (accessed at GET http://localhost:8080/api/customers/:customer_id)
+	.get(function(req, res) {
+		Customer.findById(req.params.customer_id, function(err, customer) {
+			if (err)
+				res.send(err);
+
+			res.json(customer);
+		});
+	})
+	// update the bear with this id
+	.put(function(req, res) {
+		Customer.findById(req.params.customer_id, function(err, customer) {
+
+			if (err)
+				res.send(err);
+
+			customer.name = req.body.name;
+			customer.location = req.body.location;
+			customer.meta.age = req.body.age;
+			customer.meta.website = req.body.website;
+			customer.meta.email = req.body.email;
+			customer.meta.phone = req.body.phone;
+			customer.updated_at = new Date();
+
+			customer.save(function(err) {
+				if (err)
+					res.send(err);
+
+				res.json({ message: 'Customer updated!' });
+			});
+
+		});
+	})
+
+	// delete the bear with this id
+	.delete(function(req, res) {
+		Customer.remove({
+			_id: req.params.customer_id
+		}, function(err, customer) {
+			if (err)
+				res.send(err);
+
+			res.json({ message: 'Successfully deleted' });
+		});
 	});
 
 // REGISTER OUR ROUTES -------------------------------
