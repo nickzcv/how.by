@@ -12,7 +12,7 @@ var winston    = require('winston');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var port = process.env.PORT || 8080;        // set our port
+var port = process.env.PORT || 80;        // set our port
 
 var mongoose = require('mongoose');
 mongoose.connect('localhost:27017/api'); // connect to our database
@@ -26,6 +26,18 @@ app.locals.logger.add(winston.transports.Console, {
 	colorize: true
 });
 
+// Log every request.
+app.use(function (req, res, next) {
+	req.app.locals.logger.info('[' + req.method + ']', req.url);
+	next();
+});
+
+
+app.use(express.static('./app/src'));                 // set the static files location /src/img will be /img for users
+
+
+
+
 // ROUTES FOR OUR API
 // =============================================================================
 var router = express.Router();              // get an instance of the express Router
@@ -34,14 +46,6 @@ var router = express.Router();              // get an instance of the express Ro
 router.get('/', function(req, res) {
 	res.json({ message: 'How are you? welcome to our api!' });
 });
-
-// Log every request.
-router.use(function (req, res, next) {
-	req.app.locals.logger.info('[' + req.method + ']', req.url);
-	next();
-});
-
-// more routes for our API will happen here
 
 // on routes that end in /customers
 // ----------------------------------------------------
@@ -97,7 +101,7 @@ router.route('/customers/:customer_id')
 			res.json(customer);
 		});
 	})
-	// update the bear with this id
+	// update
 	.put(function(req, res) {
 		Customer.findById(req.params.customer_id, function(err, customer) {
 
@@ -122,7 +126,7 @@ router.route('/customers/:customer_id')
 		});
 	})
 
-	// delete the bear with this id
+	// delete
 	.delete(function(req, res) {
 		Customer.remove({
 			_id: req.params.customer_id
@@ -137,6 +141,11 @@ router.route('/customers/:customer_id')
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
 app.use('/api', router);
+
+app.get('*', function (req, res) {
+	res.sendfile('./src/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+});
+
 
 // START THE SERVER
 // =============================================================================
