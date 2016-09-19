@@ -23,10 +23,11 @@ router.route('/customers.js')
 	.post(function(req, res) {
 
 		var customer = new Customer();
-
-		customer.name = req.body.name;
+		
 		customer.username = req.body.username;
 		customer.password = req.body.password;
+		customer.name = req.body.name;
+		customer.avatar= req.body.avatar;
 		customer.status = 'NEW';
 		customer.location = req.body.location;
 		customer.meta.age = req.body.age;

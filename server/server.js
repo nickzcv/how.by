@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 app.locals.logger = new winston.Logger();
 app.locals.logger.add(winston.transports.Console, {
 	colorize: true
-});
+}); 
 
 // Log every request.
 app.use(function (req, res, next) {
