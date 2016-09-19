@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/mediaqueries.css">
 
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -108,22 +109,21 @@
       <header class="front-page-header">
         <div class="container front-page-intro">
           <div class="row">
-            <div class="col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4">
+            <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
                 <span class="icon icon-compass"></span>
                 <span class="text-uppercase montserrat small-text">HOW.by</span>
-                <h2 class="text-uppercase text-center">
-                  <b>Рекламный навигатор</b>
-                </h2>
-                <ul class="list-inline text-uppercase text-center montserrat top-tag-line">
+                <div class="row">
+                  <div class="col-md-6">
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Я Заказчик</a>
+                  </div>
+                  <div class="col-md-6">
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Я Исполнитель</a>
+                  </div>
+                </div>
 
-                  <li style="visibility: hidden">
-                    <i class="fa fa-star"></i>
-                    <b>Автоматизированный сервис</b>
-                    <i class="fa fa-star"></i>
-                  </li>
 
-                </ul>
-
+            </div>
+            <div class="col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4">
                 <form action="#">
                   <select name="regions-select" id="place-regions-select" class="cs-select cs-skin-elastic front-page-select-list">
                     <option value="" disabled selected>
@@ -138,7 +138,7 @@
                     <i class="fa fa-search"></i>
                   </button>
                 </form>
-                <span class="text-uppercase text-center montserrat small-text">сейчас популярно</span>
+                <span class="text-uppercase text-center montserrat small-text">популярные категории</span>
                 <ul class="list-inline text-center front-top-categories">
                   <li>
                     <a href="#">
