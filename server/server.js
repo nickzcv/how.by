@@ -9,7 +9,7 @@ var winston    = require('winston');
 var port = process.env.PORT || 80;
 var mongoose = require('mongoose');
 
-mongoose.connect('localhost:27017/api'); // connect to our database
+mongoose.connect('localhost:27017/how_by'); // connect to our database
 
 
 // configure app to use bodyParser()
