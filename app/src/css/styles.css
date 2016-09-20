@@ -20,9 +20,6 @@ body{
 --------------------------------------------*/
 body{font-family: "Helvetica Neue",Helvetica,Arial,sans-serif}
 
-/* aditional class for elements with 'Montserrat' font-family */
-.montserrat{font-family: 'Montserrat', sans-serif;}
-
 /** font sizes **/
 .menu-top-categories h6, .navbar-nav a, .header-top-category, 
 .header-top-tag-line, .about-details li:first-child, .about-details i.fa, 
@@ -67,7 +64,7 @@ body{font-family: "Helvetica Neue",Helvetica,Arial,sans-serif}
 }
 .front-page-intro{
 	position: relative;
-	top: 35%;
+	top: 25%;
 	color: #fff;
 	z-index: 2;
 }
@@ -697,11 +694,13 @@ body{font-family: "Helvetica Neue",Helvetica,Arial,sans-serif}
 .logo{
 	position: relative;
 	display: block;
-	width: 130px;
-	height: 107px;
-	background-position: center;
-	background-size: 100%;
-	background-repeat: no-repeat;
+}
+.logo > span{
+	font-size: 35px;
+	color: #fff;
+}
+.logo > span.icon-compass{
+	font-size: 30px;
 }
 .navbar-header{margin-left: 15px !important;}
 
@@ -4200,7 +4199,7 @@ div.cs-active {
 	border-bottom: 2px solid #333;
 	display: block;
 	position: relative;
-	font-size: 50px;
+	font-size: 75px;
 	text-align: center;
 	line-height: 192px;
 	z-index: 1;
