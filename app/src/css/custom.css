@@ -6,6 +6,13 @@
     margin-top: 50px;
 }
 
+.pt-20 {
+    padding-top: 20px;
+}
+.pb-20 {
+    padding-bottom: 20px;
+}
+
 
 /* Main page buttons styles */
 .front-page-intro .button{
@@ -62,4 +69,9 @@
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+}
+
+/* Wrap header and content */
+.front-page-wrapp {
+    overflow: hidden;
 }

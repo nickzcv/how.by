@@ -160,9 +160,11 @@ body{font-family: "Helvetica Neue",Helvetica,Arial,sans-serif}
 
 .front-page-intro .small-text:last-of-type{
 	margin: 17px 0;
+	/*
 	background-image: url("../images/front-pg-intro-left.png"), url("../images/front-pg-intro-right.png");
 	background-repeat: no-repeat;
 	background-position: left, right;
+	*/
 }
 
 .front-page-intro .front-top-categories{
@@ -739,9 +741,6 @@ body{font-family: "Helvetica Neue",Helvetica,Arial,sans-serif}
 	margin-left: -5px !important;
 	margin-right: 30px;
 	margin-top: 10px;
-	background-image: url("http://placehold.it/220x80") !important;
-	background-repeat: no-repeat;
-	background-size: 100% !important;
 }
 
 
@@ -4201,7 +4200,7 @@ div.cs-active {
 	border-bottom: 2px solid #333;
 	display: block;
 	position: relative;
-	font-size: 72px;
+	font-size: 50px;
 	text-align: center;
 	line-height: 192px;
 	z-index: 1;
@@ -4223,7 +4222,7 @@ div.cs-active {
 	border-bottom: 2px solid #333;
 	width: 357px;
 	vertical-align: top;
-	height: 65px;
+	height: 52px;
 	float: left;
 	background-image: linear-gradient(to right, #333 15%, rgba(255, 255, 255, 0) 0%);
     background-position: center;
@@ -4233,12 +4232,13 @@ div.cs-active {
 
 .submit-title-box h2 {
 	font-weight: 700;
-	display: inline-block; 
+	display: inline-block;
+	font-size: 19px
 }
 .submit-title-box h2:first-of-type{
 	background: #f4f400;
 	margin: 0;
-	padding: 20px 10px 10px 10px;
+	padding: 16px 10px 14px 10px;
 	text-align: center;
 	border-right: 2px solid #333;
 	float: left;
@@ -4249,6 +4249,7 @@ div.cs-active {
 	font-style: normal;
 	float: left;
 	padding: 0 15px;
+	line-height: 12px;
 }
 
 .submit-text-box {
