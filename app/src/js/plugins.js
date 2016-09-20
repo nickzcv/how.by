@@ -1005,7 +1005,7 @@
 
 	/* InfoBox extends OverlayView in the Google Maps API v3.
 	 */
-	InfoBox.prototype = new google.maps.OverlayView();
+	//InfoBox.prototype = new google.maps.OverlayView();
 
 	/**
 	 * Creates the DIV representing the InfoBox.
@@ -1724,7 +1724,7 @@
 	}
 
 	// MarkerLabel_ inherits from <code>OverlayView</code>:
-	MarkerLabel_.prototype = new google.maps.OverlayView();
+	//MarkerLabel_.prototype = new google.maps.OverlayView();
 
 	/**
 	 * Adds the DIV representing the label to the DOM. It is called
@@ -1957,6 +1957,6 @@
 	}
 
 	// MarkerWithLabel inherits from <code>Marker</code>:
-	MarkerWithLabel.prototype = new google.maps.Marker();
+	//MarkerWithLabel.prototype = new google.maps.Marker();
 
 /*------- end markerwithlabel.js -------*/ 

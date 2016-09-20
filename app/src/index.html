@@ -13,6 +13,8 @@
     <!-- Main css -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/mediaqueries.css">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/custom.css">
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -92,11 +94,9 @@
             <ul class="nav navbar-nav pull-right text-uppercase montserrat">
               <li class="active"><a href="index.html"><b>Главная</b> <span class="sr-only">(current)</span></a></li>
 
-              <li><a href="how-it-works.html">Как это работает?</a></li>
+              <li><a href="#">Как это работает?</a></li>
 
-              <li><a href="how-it-works.html">Обратная связь</a></li>
-
-
+              <li><a href="#">Обратная связь</a></li>
 
               <li class="addPlace">
                 <a href="#" class="hovered"><b>Создать аккаунт</b></a>
@@ -109,21 +109,25 @@
       <header class="front-page-header">
         <div class="container front-page-intro">
           <div class="row">
-            <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+
+            <div class="col-sm-offset-2 col-sm-8 col-md-offset-1 col-md-10">
                 <span class="icon icon-compass"></span>
                 <span class="text-uppercase montserrat small-text">HOW.by</span>
                 <div class="row">
-                  <div class="col-md-6">
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Я Заказчик</a>
+                  <div class="col-md-6 text-right">
+                    <div class="button">
+                      <a href="#">Я Заказчик</a>
+                    </div>
                   </div>
-                  <div class="col-md-6">
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Я Исполнитель</a>
+                  <div class="col-md-6 text-left">
+                    <div class="button">
+                      <a href="#">Я Исполнитель</a>
+                    </div>
                   </div>
                 </div>
-
-
             </div>
-            <div class="col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4">
+
+            <div class="col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4 mt-50" >
                 <form action="#">
                   <select name="regions-select" id="place-regions-select" class="cs-select cs-skin-elastic front-page-select-list">
                     <option value="" disabled selected>
@@ -172,6 +176,7 @@
                   </li>
                 </ul>
             </div>
+
           </div>
         </div>
       </header>
@@ -265,9 +270,10 @@
     <script src="js/jquery.min.js"></script>
     <!-- bootstrap.js -->
     <script src="js/bootstrap.min.js"></script>
-    <!-- Map script -->
+    <!-- Map script
     <script src='https://maps.googleapis.com/maps/api/js?key=&sensor=false&extension=.js'></script>
     <script src='js/maps.js'></script>
+     -->
     <!-- plugins & funcitons -->
     <script src="js/plugins.js"></script>
     <script src="js/functions.js"></script>
