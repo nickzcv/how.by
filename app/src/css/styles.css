@@ -691,15 +691,15 @@ body{font-family: "Helvetica Neue",Helvetica,Arial,sans-serif}
 .dropdown.open .dropdown-menu a:after{ background-color: #333;}
 
 /** logo **/
-.logo{
+.navbar-fixed-top .logo{
 	position: relative;
 	display: block;
 }
-.logo > span{
+.navbar-fixed-top .logo > span{
 	font-size: 35px;
 	color: #fff;
 }
-.logo > span.icon-compass{
+.navbar-fixed-top .logo > span.icon-compass{
 	font-size: 30px;
 }
 .navbar-header{margin-left: 15px !important;}
@@ -734,14 +734,18 @@ body{font-family: "Helvetica Neue",Helvetica,Arial,sans-serif}
 .navbar-fixed .navbar-nav>.active>a, .navbar-fixed .navbar-nav>.active>a:focus, 
 .navbar-fixed .navbar-nav>.active>a:hover{border-bottom: 2px solid #333 !important}
 
-.navbar-fixed .navbar-brand {
-	width: 110px;
-	height: 40px;
+ .navbar-fixed .navbar-brand {
 	margin-left: -5px !important;
 	margin-right: 30px;
-	margin-top: 10px;
+	 
 }
-
+.navbar-fixed  .logo > span{
+	font-size: 35px;
+	color: #000;
+}
+.navbar-fixed  .logo > span.icon-compass{
+	font-size: 30px;
+}
 
 /* showing ellements on navbar */
 .navbar-fixed .navbar-form, .navbar-fixed .menu-top-categories{ display: block !important }
