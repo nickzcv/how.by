@@ -9,8 +9,10 @@ Web application connecting people to get their needs satisfied.
 
 ```
 Node.js (Express 4)
-Angular.js
 MongoDB
+
+Angular
+Bootstrap
 ```
 
 ### Installing
@@ -28,10 +30,6 @@ Run server
 node server/server.js
 ```
 
-
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 
 ## Versioning
