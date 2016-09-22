@@ -4,10 +4,11 @@
 // call the packages we need
 var express    = require('express');        // call express
 var app        = express();                 // define our app using express
+var port       = process.env.PORT || 80;
+var path 	   = require('path');
 var bodyParser = require('body-parser');
 var winston    = require('winston');
-var port = process.env.PORT || 80;
-var mongoose = require('mongoose');
+var mongoose   = require('mongoose');
 
 mongoose.connect('localhost:27017/how_by'); // connect to our database
 
@@ -32,7 +33,7 @@ app.use(function (req, res, next) {
 });
 
 
-app.use(express.static('./app/src'));                 // set the static files location /src/img will be /img for users
+app.use(express.static(path.join(__dirname, '../app/src/')));                 // set the static files location /src/css will be /css for users
 
 // ROUTES FOR OUR API
 // =============================================================================
@@ -45,7 +46,7 @@ app.use('/api', customers);
 
 
 app.get('*', function (req, res) {
-	res.sendfile('./src/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+	res.sendFile(path.join(__dirname)); // load the single view file (angular will handle the page changes on the front-end)
 });
 
 

@@ -17,7 +17,7 @@ router.get('/', function(req, res) {
 
 // on routes that end in /customers
 // ----------------------------------------------------
-router.route('/customers.js')
+router.route('/customers')
 
 // create a Customer (accessed at POST http://localhost:8080/api/customer)
 	.post(function(req, res) {
@@ -49,11 +49,13 @@ router.route('/customers.js')
 
 	// get all the customers (accessed at GET http://localhost:8080/api/customer)
 	.get(function(req, res) {
+
 		Customer.find(function(err, customer) {
 			if (err)
 				res.send(err);
 
 			res.json(customer);
+
 		});
 	});
 
