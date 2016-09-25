@@ -820,7 +820,7 @@ body{font-family: "Helvetica Neue",Helvetica,Arial,sans-serif}
 .menu-category a:before{margin-left: 0}
 
 /** main menu **/
-.navbar-nav{margin-top: 30px;}
+.navbar-nav{margin-top: 10px;}
 .navbar-nav a{
 	padding: 5px 0 0 !important;
 	margin: 0 20px;
@@ -4212,7 +4212,7 @@ div.cs-active {
 .submit-icon:before {
 	content: "";
 	position: absolute;
-	left: 118px;
+	
 	top: 62px;
 	width: 120px;
 	height: 56px;
