@@ -22,13 +22,13 @@
     position:relative;
     display:inline-block;
     margin:20px;
-    width: 360px;
+    width: 300px;
 }
 
 .front-page-intro .button a{
     color: #fff;
     font-family:Helvetica, sans-serif;
-    font-size:33px;
+    font-size:22px;
     text-align: center;
     text-decoration:none;
     background-color: #cc6700;
@@ -36,7 +36,7 @@
     position:relative;
     padding:20px 40px;
     opacity: 0.85;
-
+    text-transform: uppercase;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     text-shadow: 0 1px 0 #915100;
     filter: dropshadow(color=#915100, offx=0px, offy=1px);
