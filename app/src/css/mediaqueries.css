@@ -705,7 +705,7 @@
 	/* main menu button (fixed navbar) normal state*/
 	.navbar-fixed .navbar-toggle{
 		border-color: #333;
-		margin-top: 10px;
+		margin-top: 15px;
 	}
 	.navbar-fixed .navbar-toggle .icon-bar{ background-color: #333; }
 	.navbar-fixed{overflow: visible;}
@@ -1158,12 +1158,7 @@
 	.navbar-brand{ top: 25px; }
 
 	.navbar-toggle.collapsed{
-		display: block;
-		position: absolute;
-		top: 30px;
-		right: 30px;
-		border: 1px solid #333;
-		border-radius: 0;
+
 	}
 	.navbar-toggle.collapsed span:nth-child(3){ visibility: visible;}
 	.navbar-toggle.collapsed span:nth-child(2){
@@ -1180,12 +1175,12 @@
 		position: relative;
 		transition: all 0.2s ease-in-out;
 	}
-	
+
 	.navbar-toggle{
 		display: block;
 		position: absolute;
-		top: 30px;
-		right: 30px;
+		top: 5px;
+		right: 5px;
 		border: 1px solid #333;
 		border-radius: 0;
 	}
@@ -1208,7 +1203,7 @@
 		z-index: 99;
 		margin-left: -15px !important;
 	}
-	.navbar-fixed{ height: 110px;}
+	.navbar-fixed{ height: 62px;}
 	
 	.navbar-form{
 		position: absolute;
@@ -1695,13 +1690,6 @@
 /* Monitors ( low resolution ) ----------- */
 @media only screen and (min-width : 1024px) and (max-width : 1500px){
 	/** top bar fixed menu **/
-	.navbar-fixed .navbar-brand{margin-right: 20px}
-	.navbar-fixed{ }
-	.navbar-fixed .navbar-collapse{
-		border-bottom: 2px solid #333;
-		margin: 0 -15px;
-	}
-
 
 
 

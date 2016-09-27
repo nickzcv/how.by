@@ -1,25 +1,21 @@
 var express = require('express');
 var router = express.Router();              // get an instance of the express Router
-//var bodyParser = require('body-parser');
 
 //Define mongoose Schema
 var Customer = require('../../app/models/customer');
 
-// configure app to use bodyParser()
-// this will let us get the data from a POST
-//app.use(bodyParser.urlencoded({ extended: true }));
-//app.use(bodyParser.json());
+
 
 // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
 router.get('/', function(req, res) {
-	res.json({ message: 'How are you? welcome to our api!' });
+	res.json({ message: 'How are you? welcome to HOW api!' });
 });
 
 // on routes that end in /customers
 // ----------------------------------------------------
 router.route('/customers')
 
-// create a Customer (accessed at POST http://localhost:8080/api/customer)
+// create a Customer (accessed at POST /api/customer)
 	.post(function(req, res) {
 
 		var customer = new Customer();
@@ -47,7 +43,7 @@ router.route('/customers')
 
 	})
 
-	// get all the customers (accessed at GET http://localhost:8080/api/customer)
+	// get all the customers (accessed at GET /api/customer)
 	.get(function(req, res) {
 
 		Customer.find(function(err, customer) {
@@ -63,7 +59,7 @@ router.route('/customers')
 // ----------------------------------------------------
 router.route('/customers/:customer_id')
 
-// get the customer with that id (accessed at GET http://localhost:8080/api/customers/:customer_id)
+// get the customer with :customer_id
 	.get(function(req, res) {
 		Customer.findById(req.params.customer_id, function(err, customer) {
 			if (err)

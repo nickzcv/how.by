@@ -692,7 +692,7 @@ body{font-family: "Helvetica Neue",Helvetica,Arial,sans-serif}
 
 /** logo **/
 .navbar-fixed-top .logo{
-	position: relative;
+
 	display: block;
 }
 .navbar-fixed-top .logo > span{
@@ -822,8 +822,8 @@ body{font-family: "Helvetica Neue",Helvetica,Arial,sans-serif}
 /** main menu **/
 .navbar-nav{margin-top: 10px;}
 .navbar-nav a{
-	padding: 5px 0 0 !important;
-	margin: 0 20px;
+	padding: 5px 10px 0 !important;
+	margin: 0 10px;
 	color: #f9f9f6 !important;
 	letter-spacing: 2px;
 	line-height: 30px !important;

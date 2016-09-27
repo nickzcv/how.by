@@ -54,7 +54,7 @@ router.route('/contractors')
 // ----------------------------------------------------
 router.route('/contractors/:contractor_id')
 
-// get the contractor with that id (accessed at GET http://localhost:8080/api/contractors/:contractor_id)
+// get the contractor with :contractor_id
 	.get(function(req, res) {
 		Contractor.findById(req.params.contractor_id, function(err, contractor) {
 			if (err)
