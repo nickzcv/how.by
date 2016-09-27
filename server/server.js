@@ -7,6 +7,7 @@ var app        = express();                 // define our app using express
 var port       = process.env.PORT || 80;
 var path 	   = require('path');
 var bodyParser = require('body-parser');
+var favicon    = require('serve-favicon');
 var winston    = require('winston');
 var mongoose   = require('mongoose');
 
@@ -18,6 +19,13 @@ mongoose.connect('localhost:27017/how_by'); // connect to our database
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+//  __dirname == /server
+// set the static files location /src/css will be /css for users
+app.use(express.static(path.join(__dirname, '../app/src/')));
+
+
+// serve favicon
+app.use(favicon(path.join(__dirname, '../app/src/images/favicons/favicon.ico')));
 
 
 // Set up a logger.
@@ -33,11 +41,9 @@ app.use(function (req, res, next) {
 });
 
 
-app.use(express.static(path.join(__dirname, '../app/src/')));                 // set the static files location /src/css will be /css for users
-
 // ROUTES FOR OUR API
 // =============================================================================
-var customers = require('./api/customers');
+var customers = require(path.join(__dirname, 'api/customers'));
 
 
 // REGISTER OUR ROUTES -------------------------------
@@ -45,9 +51,9 @@ var customers = require('./api/customers');
 app.use('/api', customers);
 
 
-app.get('*', function (req, res) {
-	res.sendFile(path.join(__dirname)); // load the single view file (angular will handle the page changes on the front-end)
-});
+//app.get('*', function (req, res) {
+	//res.sendFile(path.join(__dirname)); // load the single view file (angular will handle the page changes on the front-end)
+//});
 
 
 // START THE SERVER
