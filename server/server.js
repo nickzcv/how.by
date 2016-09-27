@@ -44,12 +44,13 @@ app.use(function (req, res, next) {
 // ROUTES FOR OUR API
 // =============================================================================
 var customers = require(path.join(__dirname, 'api/customers'));
+var contractor = require(path.join(__dirname, 'api/contractors'));
 
 
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
 app.use('/api', customers);
-
+app.use('/api', contractor);
 
 
 // Handle 404 (page not found).
