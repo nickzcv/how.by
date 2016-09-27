@@ -51,9 +51,14 @@ var customers = require(path.join(__dirname, 'api/customers'));
 app.use('/api', customers);
 
 
-//app.get('*', function (req, res) {
-	//res.sendFile(path.join(__dirname)); // load the single view file (angular will handle the page changes on the front-end)
-//});
+
+// Handle 404 (page not found).
+app.use(function (req, res) {
+	res
+		.status(404)
+		// index for a while
+		.sendFile(path.join(__dirname, '../app/src/index.html'));
+});
 
 
 // START THE SERVER
