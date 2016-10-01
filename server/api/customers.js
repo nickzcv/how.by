@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();              // get an instance of the express Router
 
 //Define mongoose Schema
-var Customer = require('../../app/models/customer');
+var Customer = require('../models/customer');
 
 
 

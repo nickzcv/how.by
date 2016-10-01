@@ -11,7 +11,7 @@ Web application connecting people to get their needs satisfied.
 Node.js (Express 4)
 MongoDB
 
-Angular
+Backbone.js (Marionette)
 Bootstrap
 ```
 
