@@ -15,7 +15,7 @@ router.get('/', function(req, res) {
 // ----------------------------------------------------
 router.route('/customers')
 
-// create a Customer (accessed at POST /api/customer)
+// create a Customer (accessed at POST /api/customers)
 	.post(function(req, res) {
 
 		var customer = new Customer();
@@ -43,7 +43,7 @@ router.route('/customers')
 
 	})
 
-	// get all the customers (accessed at GET /api/customer)
+	// get all the customers (accessed at GET /api/customers)
 	.get(function(req, res) {
 
 		Customer.find(function(err, customer) {
