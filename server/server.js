@@ -21,11 +21,11 @@ app.use(bodyParser.json());
 
 //  __dirname == /server
 // set the static files location /src/css will be /css for users
-app.use(express.static(path.join(__dirname, '../app/src/')));
+app.use(express.static(path.join(__dirname, '../app/index/')));
 
 
 // serve favicon
-app.use(favicon(path.join(__dirname, '../app/src/images/favicons/favicon.ico')));
+app.use(favicon(path.join(__dirname, '../app/index/images/favicons/favicon.ico')));
 
 
 // Set up a logger.
@@ -60,7 +60,7 @@ app.use(function (req, res) {
 	res
 		.status(404)
 		// index for a while
-		.sendFile(path.join(__dirname, '../app/src/index.html'));
+		.sendFile(path.join(__dirname, '../app/index/index.html'));
 });
 
 
