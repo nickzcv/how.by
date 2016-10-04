@@ -30,8 +30,10 @@ router.route('/customers')
 		customer.meta.website = req.body.website;
 		customer.meta.email = req.body.email;
 		customer.meta.phone = req.body.phone;
+		customer.isActive = false;
 		customer.created_at = new Date();
 		customer.updated_at = new Date();
+		customer.notes = '';
 
 		// save the customer and check for errors
 		customer.save(function(err) {
