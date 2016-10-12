@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 
 //  __dirname == /server
 // set the static files location /src/css will be /css for users
-app.use(express.static(path.join(__dirname, '../app/index/')));
+app.use(express.static(path.join(__dirname, '../app/urban/')));
 
 
 // serve favicon
@@ -60,7 +60,7 @@ app.use(function (req, res) {
 	res
 		.status(404)
 		// index for a while
-		.sendFile(path.join(__dirname, '../app/index/index.html'));
+		.sendFile(path.join(__dirname, '../app/urban/index.html'));
 });
 
 

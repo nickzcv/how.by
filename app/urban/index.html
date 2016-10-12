@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="js">
 
 <head>
 	<meta charset="utf-8">
@@ -8,7 +8,7 @@
 
 	<title></title>
 
-	<link rel="stylesheet" href="css/main.css">
+	<link  rel="stylesheet/less" type="text/css" href="less/main.less">
 	<link rel="icon" href="img/favicon.png">
 </head>
 
@@ -18,10 +18,23 @@
 </header>
 
 <main>
-	<section id="action1">
+	<section class="slide1">
 
+		<!-- 1 background - street -->
+		<object type="image/svg+xml" data="svg/bg1.svg" class="street"></object>
 
+		<!-- 2 background - buildings + trees -->
+		<object type="image/svg+xml" data="svg/bg2.svg" class="buildings"></object>
 
+		<!-- 3 background - shadows -->
+		<object type="image/svg+xml" data="svg/bg3.svg" class="shadows"></object>
+
+		<div class="ground"></div>
+
+	</section>
+
+	<section class="slide2 hidden">
+		slide2
 	</section>
 </main>
 
@@ -29,8 +42,9 @@
 
 </footer>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="js/script.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js"></script>
+	<script src="js/main.js"></script>
 </body>
 
 </html>
