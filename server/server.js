@@ -11,7 +11,8 @@ var favicon    = require('serve-favicon');
 var winston    = require('winston');
 var mongoose   = require('mongoose');
 
-mongoose.connect('localhost:27017/how_by'); // connect to our database
+// TODO: uncomment when bd will be needed
+// mongoose.connect('localhost:27017/how_by'); // connect to our database
 
 
 // configure app to use bodyParser()
@@ -21,11 +22,11 @@ app.use(bodyParser.json());
 
 //  __dirname == /server
 // set the static files location /src/css will be /css for users
-app.use(express.static(path.join(__dirname, '../app/urban/')));
+app.use(express.static(path.join(__dirname, '../app/')));
 
 
 // serve favicon
-app.use(favicon(path.join(__dirname, '../app/index/images/favicons/favicon.ico')));
+// app.use(favicon(path.join(__dirname, '../app/index/images/favicons/favicon.ico')));
 
 
 // Set up a logger.
@@ -60,7 +61,7 @@ app.use(function (req, res) {
 	res
 		.status(404)
 		// index for a while
-		.sendFile(path.join(__dirname, '../app/urban/index.html'));
+		.sendFile(path.join(__dirname, '../app/index.html'));
 });
 
 

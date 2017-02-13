@@ -1,0 +1,163 @@
+/*
+*  Mobile first StyleSheet created by Nick Zaicev.
+*
+*/
+/* Base styles
+-------------------------------------------------- */
+html {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #000;
+  position: relative;
+  font-size: 1rem;
+  min-height: 100%;
+  min-width: 320px; }
+
+body {
+  margin-bottom: 100px;
+  /* Margin bottom by footer height */ }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  /* Set the fixed height of the footer here */
+  background-color: #f5f5f5; }
+
+a {
+  text-decoration: underline; }
+
+a:hover {
+  text-decoration: none; }
+
+.price:after {
+  content: ' p.';
+  font-weight: 400;
+  font-size: 0.80rem; }
+
+/* Header styles
+-------------------------------------------------- */
+header {
+  /* Tablets */
+  /* Desktop and larger */ }
+
+header .logo {
+  padding: 0;
+  text-align: center;
+  background: #F26671; }
+
+header .logo a {
+  display: inline-block;
+  height: 70px;
+  width: 115px;
+  text-indent: -9999px;
+  background: url(../svg/logo.svg) no-repeat;
+  background-size: contain;
+  background-position: center; }
+
+header .hamburger {
+  font-size: 26px;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  color: #fff;
+  cursor: pointer; }
+
+header .hamburger.closeBtn span:before {
+  content: "\f2d7"; }
+
+header .cart {
+  font-size: 26px;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: #fff;
+  cursor: pointer; }
+
+header .cart .counter {
+  font-size: 1rem; }
+
+header .cart .counter .cart-word {
+  display: none; }
+
+header .cart-popup {
+  display: none; }
+
+@media only screen and (min-width: 768px) {
+  header .logo a {
+    display: block;
+    text-indent: -9999px;
+    height: 70px;
+    background: url(../svg/logo.svg) no-repeat;
+    background-size: contain;
+    background-position: center; }
+  header .cart {
+    font-size: 26px;
+    top: 15px;
+    right: 13%; }
+  header .cart-popup {
+    z-index: 1001;
+    cursor: default;
+    position: absolute;
+    right: 0;
+    width: 160px;
+    margin: 5px 0 0;
+    font-size: 1rem;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center; }
+  header .cart-popup > div {
+    margin-bottom: 15px; }
+  header .cart-popup > div span {
+    display: inline-block;
+    float: left; }
+  header .cart-popup > div b {
+    display: inline-block;
+    float: right; }
+  header .cart-popup:after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: 20%;
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid rgba(0, 0, 0, 0.7);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent; }
+  header .cart-popup .cart-btn {
+    display: block;
+    background: #F26671;
+    top: 10px;
+    padding: 3px 5px;
+    color: #fff;
+    font-size: 0.70rem;
+    text-decoration: none;
+    transition: all 0.2s ease-in;
+    text-transform: uppercase;
+    border: 1px solid #F26671; }
+  header .cart-popup .cart-btn:hover {
+    border-color: #ccc; } }
+
+@media only screen and (min-width: 992px) {
+  header .logo a {
+    display: inline-block;
+    text-indent: -9999px;
+    height: 90px;
+    width: 220px;
+    background: url(../svg/logo.svg);
+    background-size: cover;
+    background-position: center; }
+  header .cart {
+    font-size: 32px;
+    color: #555; }
+  header .cart .counter .cart-word {
+    display: inline; }
+  header .cart-popup:after {
+    right: 40%; } }
+
+/* icons
+  'partials/icons/_ionicons-variables',
+  'partials/icons/_ionicons-font',
+  'partials/icons/_ionicons-icons';
+*/

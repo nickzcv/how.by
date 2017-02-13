@@ -1,0 +1,37 @@
+/* Base styles
+-------------------------------------------------- */
+// Color schema
+$main: #F26671; // main color for logo bg and mobile header
+$dark-gray: #555; // main color for navigation
+$light-gray: #f5f5f5; // main color for navigation
+
+
+html {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #000;
+  position: relative;
+  font-size: 1rem;
+  min-height: 100%;
+  min-width: 320px;
+}
+body {
+  margin-bottom: 100px; /* Margin bottom by footer height */
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px; /* Set the fixed height of the footer here */
+  background-color: $light-gray;
+}
+a {
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+}
+.price:after {
+  content: ' p.'; // currency symbol
+  font-weight: 400;
+  font-size: 0.80rem;
+}
