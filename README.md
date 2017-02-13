@@ -1,4 +1,4 @@
-# How.by - online service prepaid ads
+# How.by
 
 Web application connecting people to get their needs satisfied.
 
